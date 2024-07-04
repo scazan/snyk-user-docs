@@ -126,3 +126,1810 @@ The Snyk CLI repository is a monorepo that also covers other projects and tools,
 ## Security
 
 For any security issues or concerns, see the [SECURITY.md](https://github.com/snyk/snyk/blob/master/SECURITY.md) file in the GitHub repository.
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
+## Scan your development Project
+
+**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Open Source Projects that must be built before testing](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source/open-source-projects-that-must-be-built-before-testing-with-the-snyk-cli).
+
+In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+
+After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+
+To scan your **source code** run `snyk code test`.
+
+You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+
+To scan a **Kubernetes (K8s) file** run the following:\
+`snyk iac test /path/to/kubernetes_file.yaml`
+
+For details about using the Snyk CLI to scan each content type, see the following:
+
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+
+## Monitor your Open Source or Container Project
+
+Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+
+This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+
+```
+> snyk monitor
+Monitoring /project (project-name)...
+
+Explore this snapshot at 
+https://app.snyk.io/org/my-org/project/29361c2c-9005-4692
+-8df4-88f1c040fa7c/history/e1c994b3-de5d-482b-9281-eab4236c851e
+
+Notifications about newly disclosed issues related to these 
+dependencies will be emailed to you.
+```
+
+You can log in to your Snyk account and navigate to the [Projects page](https://app.snyk.io/projects) to find the latest snapshot and scan results:
+
